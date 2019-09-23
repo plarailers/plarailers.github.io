@@ -26,9 +26,9 @@ strong {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-size: 40px 40px;
-  background-color: rgb(1, 109, 177);
-  background-image: repeating-linear-gradient(135deg, transparent, transparent 25%, rgb(3, 90, 166) 25%, rgb(3, 90, 166) 50%);
+  background-size: cover;
+  background-image: url(/assets/img/7ed268a7-42d9-461a-99c0-33e6a4743660.jpg);
+  background-position: center;
   filter: blur(6px);
   z-index: -1;
 }
