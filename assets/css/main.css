@@ -33,15 +33,13 @@ strong {
   z-index: -1;
 }
 
-section {
-  padding: 15px 15px;
+.container {
+  padding: 15px 0px 0px 15px;
   background-color: rgba(255, 255, 255, 0.5);
-  overflow: hidden;
-  min-height: 50vh;
 }
 
 article {
-  margin: 15px auto;
+  margin: 0px 15px 15px 0px;
   max-width: 768px;
   padding: 1rem;
   border-radius: 2px;
@@ -79,4 +77,11 @@ footer {
 .link-github {
   background-color: #333333;
   color: #fafafa;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
 }
