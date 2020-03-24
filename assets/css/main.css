@@ -16,7 +16,6 @@ strong {
   position: relative;
   overflow: hidden;
   text-align: center;
-  line-height: 400px;
   color: #fafafa;
 }
 
@@ -24,13 +23,24 @@ strong {
   content: "";
   display: block;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -6px;
   background-size: cover;
   background-image: url(/assets/img/7ed268a7-42d9-461a-99c0-33e6a4743660.jpg);
   background-position: center;
   filter: blur(6px);
   z-index: -1;
+}
+
+.jumbotron h1 {
+  margin: 200px 0px;
+}
+
+.jumbotron h1 span {
+  display: inline-block;
 }
 
 .container {
