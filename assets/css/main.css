@@ -125,4 +125,8 @@ footer {
     display: flex;
     justify-content: center;
   }
+
+  .section-main article {
+    padding: 1rem 2rem;
+  }
 }
