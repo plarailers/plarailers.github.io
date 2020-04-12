@@ -11,7 +11,6 @@ strong {
 }
 
 .header {
-  display: flex;
   position: sticky;
   top: 0;
   width: 100%;
@@ -19,6 +18,11 @@ strong {
   background-color: #00b5ee;
   z-index: 1;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.header a {
+  display: flex;
+  text-decoration: none;
 }
 
 .header-logo {
@@ -32,7 +36,7 @@ strong {
 .header h1 {
   margin: 0;
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 60px;
   color: #ffffff;
 }
