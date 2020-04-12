@@ -6,7 +6,11 @@ layout: default
   <section class="section-main">
     <article>
       <h2>{{ page.title }}</h2>
+      <div class="post-date">{{ page.date | date: "%Y/%m/%d" }}</div>
       {{ content }}
+      {% if page.author %}
+      <div class="post-author">文責：{{ page.author }}</div>
+      {% endif %}
     </article>
   </section>
   <section class="section-side">

@@ -81,6 +81,11 @@ strong {
   overflow: hidden;
 }
 
+.post-date,
+.post-author {
+  text-align: right;
+}
+
 .container img {
   display: block;
   margin: 0 auto;
