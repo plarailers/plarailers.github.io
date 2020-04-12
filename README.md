@@ -29,7 +29,7 @@ https://github.com/plarailers/plarailers.github.io で HTML やマークダウ�
 Gem というのは Ruby のライブラリです。GitHub Pages は Jekyll などのライブラリによって動いていますが、`Gemfile` に書かれた情報をもとにライブラリの管理をいい感じにしてくれるのが Bundler です。
 
 ```
-gem install bundler
+sudo gem install bundler
 ```
 
 #### このリポジトリをクローン
@@ -38,15 +38,16 @@ gem install bundler
 git clone https://github.com/plarailers/plarailers.github.io.git
 ```
 
-### ローカルサーバを立てて動作確認する
-
-必要に応じて
+#### ライブラリをインストール
 
 ```
 cd plarailers.github.io.git
+sudo bundle install
 ```
 
-でリポジトリ内に移動して
+### ローカルサーバを立てて動作確認する
+
+リポジトリ内に移動して
 
 ```
 bundle exec jekyll serve
