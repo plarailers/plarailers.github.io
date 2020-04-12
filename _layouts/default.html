@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <link rel="icon" href="/assets/img/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:100&display=swap&text=東京大学プラレーラーズものづくりを、はじめよう。" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143513555-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143513555-3');
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-logo"></div>
+    <h1>東京大学プラレーラーズ</h1>
+  </header>
+  {{ content }}
+  <footer>
+    <div class="footer-inner">
+      <a href="https://twitter.com/plarailers" target="_blank" rel=”noopener” class="link-twitter">
+        <i class="fab fa-twitter fa-fw"></i>
+        @plarailers
+      </a>
+      <a href="https://github.com/plarailers" target="_blank" rel=”noopener” class="link-github">
+        <i class="fab fa-github fa-fw"></i>
+        @plarailers
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
