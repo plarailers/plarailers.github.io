@@ -14,19 +14,6 @@ layout: default
         主に本郷キャンパスで活動しています。
       </p>
     </article>
-    {% if site.posts.size > 0 %}
-    <article>
-      <h3>最新の記事</h3>
-      <ul>
-        {% for post in site.posts %}
-          <li>
-            {{ post.date | date: "%Y/%m/%d" }}
-            <a href="{{ post.url }}">{{ post.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </article>
-    {% endif %}
     <article>
       <h3>
         新歓情報！
@@ -41,28 +28,19 @@ layout: default
         場所: <a href=https://zoom.us/j/93609685643>zoomへのリンク</a>
       </p>
     </article>
+    {% if site.posts.size > 0 %}
     <article>
-      <h3>加入を考えている方へ</h3>
-      <p>
-        <p>
-        こんにちは！プラレーラーズは<strong>プラレールの自動制御</strong>と<strong>ジオラマ作成</strong>をしているサークルです！マイコンを使った電子工作でプラレールを改造して遊んでみませんか？
-        </p>
-        <p>
-        去年の五月祭ではストップレールを制御した閉塞運行システムを、駒場祭ではテレビのリモコンを使った操縦を披露しました！
-        </p>
-        <p>
-        活動では集まって開発のための話し合いをしたり、半田付けやプログラムを書いたりジオラマを作成したりして学園祭に向けた準備をしています！
-        </p>
-        <p>
-        <strong>ものづくりが好き</strong>で<strong>機械や電気、情報に興味がある人</strong>、<strong>自由な発想を生かしたい人</strong>、そして<strong>鉄道好きやジオラマ好きの人</strong>は大歓迎です！皆さんの入サーを<strong>お待ちしています！！</strong>
-        </p>
-        <p>春から新しいサークルに入ろうと考えている<strong>二年生</strong>も大歓迎です！</p>
-        <p>お問い合わせはメールかTwitterのDMでお願いします！</p>
-        <p>メール: <a href="mailto:plarailers&#64;gmail.com">plarailers&#64;gmail.com</a><br>
-           Twitter: <a href=https://twitter.com/plarailers>@plarailers</a>
-        </p>
-      </p>
+      <h3>最新の記事</h3>
+      <ul>
+        {% for post in site.posts %}
+          <li>
+            {{ post.date | date: "%Y/%m/%d" }}
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
     </article>
+    {% endif %}
     <article>
       <h3>第93回五月祭</h3>
       <p>
