@@ -44,6 +44,93 @@ strong {
   color: #ffffff;
 }
 
+.header-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 36px;
+    height: 1px;
+    background-color: #ffffff;
+
+    &:nth-child(1) {
+      transition: transform 200ms 200ms, opacity 200ms;
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+    &:nth-child(2) {
+      transition: transform 200ms;
+      transform: rotate(0deg);
+    }
+    &:nth-child(3) {
+      transition: transform 200ms;
+      transform: rotate(0deg);
+    }
+    &:nth-child(4) {
+      transition: transform 200ms 200ms, opacity 200ms;
+      transform: translateY(10px);
+      opacity: 1;
+    }
+
+    .open > & {
+      &:nth-child(1) {
+        transition: transform 200ms, opacity 0ms 200ms;
+        transform: translateY(0px);
+        opacity: 0;
+      }
+      &:nth-child(2) {
+        transition: transform 200ms 200ms;
+        transform: rotate(45deg);
+      }
+      &:nth-child(3) {
+        transition: transform 200ms 200ms;
+        transform: rotate(-45deg);
+      }
+      &:nth-child(4) {
+        transition: transform 200ms, opacity 0ms 200ms;
+        transform: translateY(0px);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  background-color: #00ace2;
+  display: none;
+
+  &-item {
+    a {
+      display: block;
+      padding: 10px 25px;
+      color: #ffffff;
+      text-decoration: none;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
+
 .jumbotron {
   position: relative;
   overflow: hidden;
