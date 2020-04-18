@@ -216,7 +216,8 @@ footer {
 }
 
 .link-twitter,
-.link-github {
+.link-github,
+.link-email {
   display: block;
   margin: 15px;
   padding: .5rem;
@@ -234,6 +235,11 @@ footer {
 .link-github {
   background-color: #333333;
   color: #fafafa;
+}
+
+.link-email {
+  background-color: #dcdcdc;
+  color: #24292e;
 }
 
 @media (min-width: 768px) {
