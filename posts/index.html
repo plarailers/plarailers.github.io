@@ -16,15 +16,26 @@ title: 記事一覧
   <div class="container">
     <div class="columns">
       <div class="column">
-        <div class="content">
-          <ul>
-            {% for post in site.posts %}
-            <li>
-              {{ post.date | date: "%Y/%m/%d" }}
-              <a href="{{ post.url }}">{{ post.title }}</a>
-            </li>
-            {% endfor %}
-          </ul>
+        <div class="columns is-multiline">
+          {% for post in site.posts %}
+          <div class="column is-4-desktop is-6-tablet">
+            <a class="card is-block" href="{{ post.url }}">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="/assets/img/logo.jpg" alt="" class="p-is-cover">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="subtitle">
+                  {{ post.title }}
+                </p>
+                <div class="content has-text-right">
+                  <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y/%m/%d" }}</time>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
         </div>
       </div>
       <div class="column is-one-quarter">
