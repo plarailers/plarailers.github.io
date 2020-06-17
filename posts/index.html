@@ -3,20 +3,36 @@ layout: default
 title: 記事一覧
 ---
 
-<div class="container">
-  <section class="section-main">
-    <h2>記事一覧</h2>
-    {% for post in site.posts %}
-    <article>
-      {{ post.date | date: "%Y/%m/%d" }}
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </article>
-    {% endfor %}
-  </section>
-  <section class="section-side">
-    <article>
-      <h3>Twitter</h3>
-      <a class="twitter-timeline" data-height="800" href="https://twitter.com/plarailers?ref_src=twsrc%5Etfw">Tweets by plarailers</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </article>
-  </section>
-</div>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        記事一覧
+      </h1>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <ul>
+            {% for post in site.posts %}
+            <li>
+              {{ post.date | date: "%Y/%m/%d" }}
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="column is-one-quarter">
+        <div>
+          <h3 class="subtitle">Twitter</h3>
+          <a class="twitter-timeline" data-height="600" href="https://twitter.com/plarailers?ref_src=twsrc%5Etfw">Tweets by plarailers</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
