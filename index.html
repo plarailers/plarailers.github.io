@@ -33,7 +33,11 @@ layout: default
             <a class="card is-block" href="{{ post.url }}">
               <div class="card-image">
                 <figure class="image is-4by3">
+                  {% if post.image %}
+                  <img src="{{ post.image }}" alt="" class="p-is-cover">
+                  {% else %}
                   <img src="/assets/img/logo.jpg" alt="" class="p-is-cover">
+                  {% endif %}
                 </figure>
               </div>
               <div class="card-content">
