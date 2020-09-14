@@ -18,7 +18,7 @@ title: タグ別の記事一覧
       <div class="column">
         <div class="column is-vcentered">
             {% for tag in site.tags %}
-            <h1><strong>{{ tag[0] }}</strong></h1>
+            <h1 id="{{ tag[0] }}"><strong>{{ tag[0] }}</strong></h1>
             <ul>
                 <div class="columns is-multiline">
                 {% for post in tag[1] %}
