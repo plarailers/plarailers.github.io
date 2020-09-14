@@ -4,7 +4,7 @@ title: 五月祭特設ページ
 ---
 
 # 第93回五月祭に参加します
-[](https://www.youtube.com/watch?v=Uju8uIVxE5c)
+[動画](https://www.youtube.com/watch?v=Uju8uIVxE5c)
 今年の五月祭はオンラインで開催されます。
 私たちプラレーラーズは**プラレールの遠隔操作体験**を行います。自宅からプラレールを運転しよう！
 
