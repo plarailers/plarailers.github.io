@@ -1,0 +1,111 @@
+---
+---
+
+$color-plarailers: #00b5ee;
+
+.p-navbar {
+  background-color: $color-plarailers;
+}
+
+.p-navbar-logo {
+  margin-top: -8px;
+  margin-bottom: -8px;
+  margin-left: -4px;
+  margin-right: 4px;
+  width: 52px;
+  height: 52px;
+  background-image: url(/assets/img/icon.jpg);
+  background-size: 100%;
+}
+
+.p-navbar .navbar-menu {
+  background-color: $color-plarailers;
+}
+
+.p-navbar .navbar-item:hover {
+  background-color: transparent;
+}
+
+.p-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.p-hero::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -6px;
+  background-size: cover;
+  background-image: url(/assets/img/7ed268a7-42d9-461a-99c0-33e6a4743660.jpg);
+  background-position: center;
+  filter: blur(6px) brightness(50%);
+}
+
+.p-hero-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.p-hero-title span {
+  display: inline-block;
+}
+
+.content {
+  font-size: 1.125rem;
+
+  strong {
+    background-image: linear-gradient(transparent 60%, #f5f3a3 0);
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+.p-is-cover {
+  object-fit: cover;
+}
+
+.p-youtube {
+  position: relative;
+  margin: 18px auto;
+  width: 100%;
+  max-width: 560px;
+}
+
+.p-youtube::after {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%;
+}
+
+.p-youtube iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.p-icon-twitter {
+  color: #55acee;
+}
+
+.p-icon-github {
+  color: #333333;
+}
+
+.p-icon-youtube {
+  color: #ff0000;
+}
+
+.mainTags li{
+  display: inline;
+}

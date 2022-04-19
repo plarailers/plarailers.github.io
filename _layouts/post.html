@@ -2,21 +2,41 @@
 layout: default
 ---
 
-<div class="container">
-  <section class="section-main">
-    <article>
-      <h2>{{ page.title }}</h2>
-      <div class="post-date">{{ page.date | date: "%Y/%m/%d" }}</div>
-      {{ content }}
-      {% if page.author %}
-      <div class="post-author">文責：{{ page.author }}</div>
-      {% endif %}
-    </article>
-  </section>
-  <section class="section-side">
-    <article>
-      <h3>Twitter</h3>
-      <a class="twitter-timeline" data-height="800" href="https://twitter.com/plarailers?ref_src=twsrc%5Etfw">Tweets by plarailers</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </article>
-  </section>
-</div>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        {{ page.title }}
+      </h1>
+      <nav class="mainTags">
+        <h2>タグ:</h2>
+        <ul>
+          {% for tag in page.tags %}
+          <li><a href="/tags/tags#tag_{{ tag }}">{{ tag }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p class="has-text-right">
+            {{ page.date | date: "%Y/%m/%d" }}
+          </p>
+          {{ content }}
+          {% if page.author %}
+          <p class="has-text-right">
+            文責：{{ page.author }}
+          </p>
+          {% endif %}
+        </div>
+      </div>
+      {% include right_column.html %}
+    </div>
+  </div>
+</section>
+
