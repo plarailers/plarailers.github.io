@@ -3,4 +3,4 @@ plugins:
   - jekyll-redirect-from
 
 # 未来の記事も表示されるようにする
-future: false
+future: true
