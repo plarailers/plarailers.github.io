@@ -1,72 +1,65 @@
 ---
 layout: page
 title: 第76回駒場祭特設ページ
-tags:"2025"
+tags: "2025"
 image: https://github.com/plarailers/plarailers.github.io/blob/master/_posts/img/20251119/komaba2025-1.png?raw=true
 ---
 
 <h3><strong>『プラレールの自動運転』</strong>に<strong>信号現示</strong>を導入します！</h3>
 <p>
-    前回の五月祭では、速度の段階的な制御を実現し、閉塞を用いた自動運行システムを展示しました。来場していただいた方に良いリアクションをいただいた一方で、分岐器の自動制御については開発が間に合わず、実装することができませんでした。<br>
+    前回の五月祭では、<b>速度の段階的な制御</b>を実現し、閉塞を用いた自動運行システムを展示しました。来場していただいた方に良いリアクションをいただいた一方で、分岐器の自動制御については開発が間に合わず、実装することができませんでした。<br>
     そこで今回の駒場祭では、<b>分岐器の自動制御</b>を実現させます。それに加えて<b>信号機</b>を導入することで、行っている速度制御の視認性向上を図ります。
 </p>
 
 <br>
-<h4>『自動運転』</h4>
+<h4>見どころ①：列車運行システム</h4>
 <p>
-    プラレールをダイヤ通りに自動運転させました。
-    その様子を以下の動画で公開中です。　
-    駒場祭期間限定の公開ですので、お見逃しなく！
-    
-    <h6>プラレールのダイヤ通りの自動運転の動画</h6>
-    {% include youtube id="r7YqN0R19BY" %}
-    　
-    また、自動運転の実演を、11/23(月)の11:00、13:00、15:00 の3回、YouTube Liveにてライブ配信します。
-    詳しくはページの下部へ
+    <img src="https://github.com/plarailers/plarailers.github.io/blob/master/_posts/img/20251119/komaba2025-3.png?raw=true" alt="列車運行システムの説明図" />
+</p>
+<p>
+    レールの下に設置した<b>RFIDカード</b>を列車が読み取ります。<br>
+    この非接触センサにより列車が読み取った情報は<b>BluetoothでPCに送信</b>され、PCが<b>全列車の走行位置</b>を管理しています。<br>
+    今回の駒場祭のレイアウトでは、<strong>計30枚</strong>のカードが設置されています。つまり30個の閉塞区間で列車を制御しており、その時の運行状況に応じた速度制御を行っています。
 </p>
 <br>
 
-<h4>『遠隔運転体験』</h4>
-
+<h4>見どころ②：分岐器の自動制御</h4>
 <p>
-    五月祭で好評だったプラレールの遠隔運転体験を今回も実施します！
-    お手元のスマホやパソコンからプラレールを操作すれば気分はまるで運転手！
-    ご予約は下のボタンから！
+    <img src="https://github.com/plarailers/plarailers.github.io/blob/master/_posts/img/20251119/komaba2025-4.png?raw=true" alt="分岐器自動制御の説明図" />
 </p>
-
-<p class="buttons is-centered">
-    <a href="https://wayo11.github.io/platotype/" class="button is-warning is-two-thirds is-medium">プラレール遠隔操作体験を申し込む</a>
-</p>
-
-<p>遠隔操作体験の方法は以下の動画をご覧ください</p>
-
-{% include youtube id="4wzDQppkze4" %}
-
-<br>
-<h4>『YouTube Live』</h4>
-
 <p>
-    当日は、会場の様子を生配信しています。
-    また、自動運転の実演を、11/23(月)の11:00、13:00、15:00 の3回、
-    メンバーの解説付きでYouTube Liveにてライブ配信します。
-    お楽しみに！
+    五月祭のリベンジとなる<b>分岐器制御</b>です。<br>
+    今回は、<b>列車種別に応じた走行経路</b>を設定しており、それに合わせて分岐器も切り替わるようになっています。<br>
+    <strong>スカイライナー、アクセス特急、普通</strong> の３種が異なるルートで走行するのをご覧ください。
+</p>
+<br>
+
+<h4>見どころ③：信号機</h4>
+<p>
+    <img src="https://github.com/plarailers/plarailers.github.io/blob/master/_posts/img/20251119/komaba2025-5.png?raw=true" alt="分岐器自動制御の説明図" />
+</p>
+<p>
+    プラレールに、実際の鉄道に設置されているような<strong>信号機</strong>を導入します！<br>
+    2025年10月に行われた<b>MakerFaireTokyo2025</b>にて、この信号機を初めて導入して出展したところ、来場した方々にとても喜んでいただけました。<br>
+    駒場祭ではその規模を拡大し、全部で<strong>25個以上</strong>の信号機を設置する予定です!<br>
+    速度制御している様子が視覚的にわかりやすくなっていて、これまで以上に楽しんでいただける展示に仕上げています！
+</p>
+<br>
+
+<h3>ぜひ駒場祭にお越しください！</h3>
+<p>
+    メンバー一同、皆様のご来場をお待ちしています！！
+</p>
+<br>
+<p>
+    <b>展示情報</b><br>
+    <u>日時</u><br>
+    2025年11月22日(土)     9:00~18:00<br>
+    2025年11月23日(日)     9:00~18:00<br>
+    2025年11月24日(月•祝)  9:00~17:00<br>
+    <u>場所</u><br>
+    東京大学駒場キャンバス　1号館　1階　113教室<br>
 </p>
 
-<br>
-<h4>技術紹介動画</h4>
-<p>ハードウェア（車体）</p>
-{% include youtube id="fzrQrezOH7w" %}
-<p>ハードウェア（レール）</p>
-{% include youtube id="qFHehiKOMoo" %}
-<p>ソフトウェア</p>
-{% include youtube id="WEs6IcbzY0U" %}
+<h4>駒場祭公式ページの企画説明は<a href="https://www.komabasai.net/76/visitor/project/032"><u>こちら</u></a></p></h4>
 
-<h5>遠隔運転体験 YouTube Live</h5>
-<p>2日目</p>
-{% include youtube id="06Oa_vbdLbc" %}
-<p>3日目</p>
-{% include youtube id="G-G_w8zi1ok" %}
-
-
-<h4>駒場祭公式ページの企画説明</h4>
-<a href="https://www.komabasai.net/71/visitor/kikaku/317"><u>こちら</u></a></p>
