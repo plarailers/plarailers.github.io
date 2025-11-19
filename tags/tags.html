@@ -1,13 +1,13 @@
 ---
 layout: default
-title: タグ別の記事一覧
+title: 年度別の記事一覧
 ---
 
 <section class="hero">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        タグ別の記事一覧
+        年度別の記事一覧
       </h1>
     </div>
   </div>
@@ -17,7 +17,7 @@ title: タグ別の記事一覧
     <div class="columns">
       <div class="column">
         <div class="column is-vcentered">
-            {% for tag in site.tags %}
+            {% for tag in site.tags reversed %}
             <h1 id="tag_{{ tag[0] }}"><strong>{{ tag[0] }}</strong></h1>
             <ul>
                 <div class="columns is-multiline">
