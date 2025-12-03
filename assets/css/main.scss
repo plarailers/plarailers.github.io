@@ -94,8 +94,8 @@ $color-plarailers: #00b5ee;
   height: 100%;
 }
 
-.p-icon-twitter {
-  color: #55acee;
+.p-icon-x-twitter {
+  color: #000000;
 }
 
 .p-icon-github {
@@ -109,3 +109,41 @@ $color-plarailers: #00b5ee;
 .mainTags li{
   display: inline;
 }
+
+/* ----------「開発記録」記事カード用　---------- */
+.card-blog-b {
+ display: block;
+ position: relative;
+ border-radius: 4px;
+ overflow: hidden;
+ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ cursor: pointer;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-blog-b:hover {
+ transform: translateY(-6px);
+ box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+.overlay-image img {
+ width: 100%;
+ height: auto;
+ display: block;
+ transition: transform 0.4s ease;
+}
+.card-blog-b:hover .overlay-image img {
+ transform: scale(1.05);
+}
+.overlay-text {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ background: rgba(0, 0, 0, 0.4);
+ color: #fff;
+ padding: 20px;
+}
+.card-title {
+ margin: 0;
+ font-size: 2rem;
+}
+/*----------------------------------------*/

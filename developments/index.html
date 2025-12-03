@@ -1,0 +1,52 @@
+---
+layout: default
+title: 開発記録
+---
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        開発記録
+      </h1>
+      <h1>
+        <strong>ソフトウェアからハードウェアまで、私たちが開発した内容を記録していくページです</strong>
+      </h1>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="column is-vcentered">
+            {% for tag_name in site.dev_tags %}
+            <h1 id="tag_{{ tag_name }}" class="title is-4">{{ tag_name }}</h1>
+              <div class="columns is-multiline">
+                {% for post in site.developments %}
+                  {% if post.tags contains tag_name %}
+                  <div class="column is-4-desktop is-6-tablet">
+                    <a class="card-blog-b" href="{{ post.url }}">
+                      <div class="overlay-image">
+                        {% if post.image %}
+                          <img src="{{ post.image }}" alt="{{ post.title }}">
+                        {% else %}
+                          <img src="/assets/img/logo.jpg" alt="No Image">
+                        {% endif %}
+                        <div class="overlay-text">
+                          <h3 class="card-title">{{ post.title }}</h3>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <br><br><br>
+            {% endfor %}
+        </div>
+      </div>
+      {% include right_column.html %}
+    </div>
+  </div>
+</section>

@@ -4,3 +4,12 @@ plugins:
 
 # 未来の記事も表示されるようにする
 future: true
+
+collections:
+  developments:
+    output: true
+
+dev_tags:
+  - 列車運行システム（ソフトウェア）
+  - 線路上ハードウェア
+  - 車両ハードウェア
