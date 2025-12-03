@@ -121,7 +121,7 @@ $color-plarailers: #00b5ee;
  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card-blog-b:hover {
- transform: translateY(-6px);
+ transform: translateY(-6px) !important;
  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 .overlay-image img {
