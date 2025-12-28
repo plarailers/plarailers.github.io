@@ -1,6 +1,80 @@
 ---
 layout: page
-title: 公開準備中
+title: 1. PTCSの速度制御
 tags: "列車運行システム（ソフトウェア）"
-image: 
+image: https://lh3.googleusercontent.com/d/1vbqXgiOLZ-u6aTr91WTqkJ425-hK1sr4
 ---
+
+<div style="text-align: right;">
+  2025/12/28
+</div>
+<br>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1vbqXgiOLZ-u6aTr91WTqkJ425-hK1sr4" alt="タイトル画像" />
+</p>
+<br>
+<h2>PTCSとは</h2>
+<p>
+    本ページでは、私たちのサークルが開発している列車制御ソフトウェアについて解説します。<br>
+    その名は、<strong>「PTCS - Plarail Train Control System」</strong>です。
+</p>
+<p>
+    このシステムは、複数の列車が走行する環境において<strong>「衝突が起こらない、安全な列車運行」</strong>を自律的に実現する仕組みを備えています。
+</p>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/11ux6a3eEJmhFRbB0bdaXbn7Gc4mfOw1n" alt="PTCS" />
+</p>
+<br>
+<h2>システム概観</h2>
+<p>
+    列車制御システムを構成する主な要素は、次の4つです。
+</p>
+<ul>
+    <li><strong>列車制御ソフトウェア (PTCS)</strong>：システムの中核を担う指令塔。</li>
+    <li><strong>遠隔操作可能な「プラレールの車両」</strong>：Bluetooth通信により個別に制御可能。</li>
+    <li><strong>遠隔操作可能な「分岐器」</strong>：進路を自動で切り替え。</li>
+    <li><strong>遠隔操作可能な「信号機」</strong>：列車の進行・停止を視覚的にも制御。</li>
+</ul>
+<p>
+    PTCSがシステムの中枢として、各構成要素と個別に<strong>Bluetooth通信</strong>を行うことで、高度な列車制御を実現しています。
+</p>
+<br>
+<h2>列車の衝突を防ぐ仕組み</h2>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/19WRGFchrEUrafFYE5ZvSQbcUGGP6gkT1" alt="閉塞について" />
+</p>
+<p>
+    安全運行の基本として、鉄道の<strong>「閉塞（へいそく）」</strong>という概念を取り入れています。
+</p>
+<p>
+    線路上を一定間隔ごとに区切り、その<strong>「1つの閉塞区間には1つの列車しか入れない」</strong>というルールを厳守させることで、物理的な衝突を確実に防止します。
+</p>
+<br>
+<h3>RFIDによる位置検知</h3>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1lvypHe9Prdnw9ZA-empbbM56WzS-BwY3" alt="RFIDを列車が読み取る構図" />
+</p>
+<p>
+    この閉塞システムを支えているのが<strong>RFIDタグ</strong>です。
+    レールの下に設置したRFIDタグを走行中の列車が読み取ることで、システムは<strong>「どの列車がどの閉塞にいるのか」</strong>を正確に把握します。
+</p>
+<p>
+    また、事前にRFIDタグを読み取って<strong>線形データのグラフ</strong>を作成しておくことで、閉塞同士のつながりをシステムが論理的に把握できるような設計になっています。
+</p>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1TELAZooxYbxc9ulau2TzW8CUldRsEIX1" alt="線形データの図" />
+</p>
+<br>
+<h2>段階的な速度制御</h2>
+<p>
+    PTCSの大きな特徴は、列車への指示が単なる「停止か進行か」の二択ではなく、<strong>「走行速度を段階的に指示」</strong>している点です。
+</p>
+<p>
+    <strong>「1つ前の列車がいくつ先の閉塞にいるか」</strong>という情報を元に、車間距離が離れているほど速く、近づくほど遅く走るよう緻密な計算を行っています。
+</p>
+<p>
+    この速度更新は、列車がRFIDタグを読み取って<strong>在線位置が更新されるたびに、全列車に対してリアルタイムで実行</strong>されます。
+</p>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1p3_7HfVeIJ4zh-6W0Sq42Mj_9E0LuxPC" alt="速度の段階制御を示した図" />
+</p>
