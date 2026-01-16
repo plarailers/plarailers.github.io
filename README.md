@@ -50,5 +50,6 @@ sudo bundle install
 リポジトリ内に移動して
 
 ```
+eval "$(rbenv init -)"
 bundle exec jekyll serve
 ```
