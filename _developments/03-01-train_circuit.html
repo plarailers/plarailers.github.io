@@ -1,0 +1,59 @@
+---
+layout: page
+title: 1. 列車搭載のプリント基板
+tags: "車両ハードウェア"
+image: https://lh3.googleusercontent.com/d/15BwCjfYbIlrm-ycsC7OfjWVE3d_y_DS1
+---
+
+<div style="text-align: right;">
+  2026/01/
+</div>
+<br>
+
+<p>
+    私たちの運行システムにおいて、心臓部とも言えるのが<strong>列車側に搭載された制御機構</strong>です。<br>
+    PCからのコマンドを無線で受信し、モーターの回転数や位置情報を処理する「列車側ユニット」の機能について詳しく紹介します。
+</p>
+<br>
+
+<p>
+  <img src="https://lh3.googleusercontent.com/d/15BwCjfYbIlrm-ycsC7OfjWVE3d_y_DS1" alt="ESPlarailの基板"/>
+</p>
+<p>
+    こちらが、独自に設計・製作した<strong>専用プリント基板（PCB）</strong>です。<br>
+    プラレールの中間車両の裏側（床下）に取り付けており、実車の「床下機器」のような構成です。<br>
+    この回路には、高度な自動運転を実現するための<b>4つの主要機能</b>が凝縮されています。
+</p>
+<br>
+
+<div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+    <h3>① マイコン・無線通信ユニット</h3>
+    <p>
+        システムの頭脳として、<strong>ESP32</strong>を搭載しています。PCとの通信は<b>Bluetooth (BLE)</b>を用いて行われます。<br>
+        この基板では、開発ボード「ESP32-DevKitC」の機能を、車体形状に合わせて実装しています。
+    </p>
+
+    <h3>② 電源管理システム</h3>
+    <p>
+        マイコンとモーターを安定して駆動させるための電源ラインを構築しています。<br>
+        1編成につき<b>単3電池2本（約3.0V）</b>を電源とし、昇圧・降圧回路を介して各パーツへ適切な電圧を供給しています。
+    </p>
+
+    <h3>③ モーター駆動制御（PWM）</h3>
+    <p>
+        列車の加減速を制御するため、モータードライバーを介した<strong>PWM制御</strong>を行っています。<br>
+        単なるON/OFFではなく、デューティ比を調整することで、段階的な速度制御も実現しています。
+    </p>
+
+    <h3>④ 位置検知（NFC/RFIDリーダー）</h3>
+    <p>
+        列車が「今、どこにいるか」を自己判断するための重要な回路です。<br>
+        <b>RFIDアンテナ</b>を搭載し、線路下に設置されたタグを読み取ることで、位置情報をPCへフィードバックしています。
+    </p>
+</div>
+<br>
+<br>
+<p>
+    実際にこの基板を組み込んだ列車運行システムの紹介は、
+    <a href="https://plarailers.com/developments/01-01-ptcs2025/" target="_blank">「1. PTCSの速度制御」</a>の記事をご覧ください。
+</p>
