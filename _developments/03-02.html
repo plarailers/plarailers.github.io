@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 2. 中間車両の構造
+title: 2. 中間車両の構造と設計
 tags: "車両ハードウェア"
 image: https://lh3.googleusercontent.com/d/10Th0bvoJjyjiwR-jmljm0CEYZ-vbWuNF
 ---
@@ -21,14 +21,14 @@ image: https://lh3.googleusercontent.com/d/10Th0bvoJjyjiwR-jmljm0CEYZ-vbWuNF
 </p>
 <br>
 
-<h2>中間車両の役割と見た目</h2>
+<h2>中間車両の役割と初期モデルの構造</h2>
 <p>
     この中間車は、主に３つの役割を持っています。
 </p>
 <ul>
-    <li>電池とプリント基板を搭載する</li>
-    <li>車輪と連結器を装着している</li>
-    <li>動力車のモーターへ配線を伸ばす</li>
+    <li><b>電池</b>と<b>プリント基板</b>を搭載する</li>
+    <li><b>車輪</b>と<b>連結器</b>を装着する</li>
+    <li>動力車の<b>モーター</b>へ配線を伸ばす</li>
 </ul>
 <br>
 
@@ -36,27 +36,76 @@ image: https://lh3.googleusercontent.com/d/10Th0bvoJjyjiwR-jmljm0CEYZ-vbWuNF
   <img src="https://lh3.googleusercontent.com/d/1N_4V_QRG9brO0gciWw4w3vFq6sx_qfJw" alt="中間車両横側写真"/>
 </p>
 <p>
-    こちらが真横から見た写真です。<br>
+    こちらが初期モデルを真横から見た写真です。<br>
     床下には<b>プリント基板</b>があり、上には<b>単3電池2本の電池ボックス</b>が載っています。
     電池ボックスからの電力は基板へ入力され、制御された電力が動力車側のモーターへと出力される仕組みです。
 </p>
 <br>
-
+<br>
 <p>
   <img src="https://lh3.googleusercontent.com/d/1ONd-duCNnrA24cJjJiBCVBFSRF1DAfwn" alt="中間車両分解写真"/>
 </p>
 <p>
     ねじで止められた中間車を分解するとこのようになります。<br>
-    基板と配線の接続にはターミナルブロックを採用しています。
+    基板と配線の接続には<b>ターミナルブロック</b>を採用しています。
     また、車両底面の基板については、樹脂ねじで中間車に固定しています。
 </p>
 <br>
-
-<hr>
-<h3>現状の課題</h3>
 <p>
-    この構造の課題は、床下のスペースが狭いことです。
-    <b>基板と床のレールが接触</b>することがあり、坂道レールや分岐部分で引っかかって止まってしまうという問題が発生しています。<br>
-    また、先頭車両だけでなく<b>後部車両</b>にも電力配線を伸ばしたいと考えています。<br>
-    よりスムーズな走行を実現すべく、今後も改良を続けていきます。
+    この構造の課題は、<b>床下のスペースが狭い</b>ことです。
+    <b>基板と床のレールが接触</b>することがあり、坂道レールや分岐部分で引っかかって止まってしまうという問題が発生しました。<br>
+</p>
+<br>
+
+<h2>ver2.0：配線の増設</h2>
+<p>
+  <img src="https://lh3.googleusercontent.com/d/11a7__OVDW3T9Q6Dv5AgMORFg5qsGthnN" alt="中間車両v2俯瞰"/>
+</p>
+<p>
+  <img src="https://lh3.googleusercontent.com/d/17Fal1dOQWip3ZuUa7EJYY8TajdLzetqp" alt="中間車両v2真横"/>
+</p>
+<p>
+  出力強化や折り返し運転を見据えて、先頭車両だけでなく<b>後部車両</b>にも電力を供給する<b>「分流構造」</b>を導入しました。
+  プリント基板からつながる出力が、一度<b>ミニブレッドボード</b>を経由して分岐することで、前後2基のモーターを同時に駆動しています。
+  ブレッドボードを挟むような構造にし、車輪や連結器は、すべて底側の部品に固定されています。
+</p>
+<br>
+<p>
+  <img src="https://lh3.googleusercontent.com/d/1-S7quKZEJaip3iWrJd6C43TZ5RZFwnan" alt="中間車両v2分解写真"/>
+</p>
+<p>
+  こちらが分解した写真です。<br>
+  内部配線が煩雑になり、さらなる改良が求められました。
+</p>
+<br>
+
+<h2>ver3.0：基板の一部変更と床下干渉の解消</h2>
+<p>
+  <img src="https://lh3.googleusercontent.com/d/1xPXJ_9bLMZBBxSDULb2NuR1N8yv494j9" alt="中間車両v3俯瞰"/>
+</p>
+<p>
+    最新の<b>ver3.0</b>では、以上の課題を克服するべく設計を行いました。
+</p>
+<ul>
+    <li><strong>基板のマイナーチェンジ</strong>：<br>
+      基板自体に出力端子を2系統設け、ミニブレッドボードを廃止。出力の接続端子は、ターミナルブロックから<b>QIコネクタ</b>へ変更し、配線の着脱が大幅に容易になりました。</li>
+    <li><strong>オフセット配置の採用</strong>：<br>
+      基板の取付位置を車輪軸より上側に移動。これにより、レールとの接触を完全に解消しました。</li>
+    <li><strong>RFIDリーダーの検知機能を維持</strong>：<br>
+      基板位置を上げつつも、搭載されたRFIDアンテナが地上タグを検知できる距離に配置しています。</li>
+</ul>
+<br>
+
+<p>
+  <img src="https://lh3.googleusercontent.com/d/1A5hfx7O3FttldQPShW25UKsuqyTsBmVk" alt="中間車両v3真横"/>
+</p>
+
+<br>
+<h3>今後の展望</h3>
+<p>
+  最新の構造は2個のモーターを駆動させるため、これまで以上に安定した電源供給が不可欠です。
+  <strong>電池を3個に増設</strong>した運用や、<strong>昇圧回路を備えた基板設計</strong>も検討しており、今後も開発を進めていきます。
+</p>
+<p>
+  <img src="https://lh3.googleusercontent.com/d/1K21fBDsa2D6IzDs6sddY-rM12iyeBx7j" alt="中間車両v3電池3個バージョン"/>
 </p>
