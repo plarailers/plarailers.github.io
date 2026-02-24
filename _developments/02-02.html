@@ -1,0 +1,77 @@
+---
+layout: page
+title: 2. 信号機の実装
+tags: "線路上ハードウェア"
+image: https://lh3.googleusercontent.com/d/1YWYmWeHVh1PLBigmgXybZwxZjyrWAo0S
+---
+
+<div style="text-align: right;">
+  2026/02/24
+</div>
+<br>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1YWYmWeHVh1PLBigmgXybZwxZjyrWAo0S" alt="信号機の写真" />
+</p>
+<p>
+    私たちの列車運行システムでは、閉塞区間に応じた段階的な速度指示を行なっています。<br>
+    このシステムの視認性を向上させるために、<strong>LEDを用いた自動信号機</strong>を独自に開発しました。
+    レール脇に設置することで、まるで信号に従って列車が動いているような展示を実現させました。
+    ここでは、その信号機の点灯の仕組みをご紹介します。
+</p>
+<p>
+    ※速度指示の仕組みについては、<a href="https://plarailers.com/developments/01-01/" target="_blank">「1. PTCSの速度制御」</a>で詳しく述べているので、併せてご覧ください。
+</p>
+<br>
+
+<h2>信号機のハードウェア構造</h2>
+<p>
+    信号機の筐体は、<b>3Dプリンタ</b>を用いて設計・製作しています。
+    LEDを挿せる穴が空いた黒色のパーツと、それを支える白色の支柱パーツから構成されており、これらをネジ・ナットを使って固定しています。
+</p>
+<br>
+
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1vBaQtP4wx5c6sDJXRsCqgGlI4Fq3SF1Z" alt="信号機の背面" />
+</p>
+<p>
+    背面からは各LEDを駆動するための配線が伸びています。<br>
+    初期モデル（左）はLEDの足に直接ジャンパワイヤを接続していましたが、改良モデル（右）では配線を<b>プリント基板</b>に置き換えることで、スマート化しました。<br>
+    <strong>5灯式信号機</strong>の場合、各LEDの信号線5本と共通GND1本の計6本を集約しています。
+</p>
+<br>
+
+<h2>点灯制御の回路</h2>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1ifVDCjgnTBxM7bfPGyI1ssaDaOUUKpNe" alt="信号を制御する回路" />
+</p>
+<p>
+    こちらが、信号機の点灯を制御している回路です。
+    左側がブレッドボードを用いたもの、右側は同じ回路をプリント基板にしたものです。
+    構成している主要部品は、マイコン「ESP32」と、ロジックIC「74HC595」です。
+</p>
+<ul>
+    <li><strong>ESP32</strong>：PCからの指示を受信し、点灯を制御するプログラムを書き込んだマイコン。</li>
+    <li><strong>74HC595</strong>：8ビット・シフトレジスタIC。多数のLEDを制御するために採用しました。</li>
+</ul>
+<br>
+
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1keSqb62zTQNOAT3QcR6A4pYtq9bzNrAo" alt="信号制御の模式図" />
+</p>
+<p>
+    通信システムは分岐器と同様です（<a href="https://plarailers.com/developments/02-01/" target="_blank">「1. 分岐器の自動制御」</a>）。<br>
+    <b>Bluetooth（無線）</b>でPCから親機へ送られたデータは、<b>シリアル通信（有線）</b>を介して各信号機ユニットへ伝達され、瞬時に指定の点灯パターンへと切り替わります。
+</p>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1stPlCn4vPaV-5zbdqp7Y7PiRV-dYSoLj" alt="信号機の点灯パターン" />
+</p>
+<br>
+
+<hr>
+<hr>
+<h3>展示中の信号機の写真</h3>
+<div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+    <img src="https://lh3.googleusercontent.com/d/1ekh5q2UGN3pkAXXSK_ZrHmkBX_2VclZI" alt="展示風景1" style="width: 100%; border-radius: 8px;" />
+    <img src="https://lh3.googleusercontent.com/d/1BYNWFnv8mZWHcGKVyzMLQpnsxZ7vVyXA" alt="展示風景2" style="width: 100%; border-radius: 8px;" />
+    <img src="https://lh3.googleusercontent.com/d/1KMw33IBwrX6nbJdBg5oJ3nAMweikirIz" alt="展示風景3" style="width: 100%; border-radius: 8px;" />
+</div>
