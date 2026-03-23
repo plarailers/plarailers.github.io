@@ -3,54 +3,61 @@ layout: default
 title: 年度別の記事一覧
 ---
 
-<section class="hero">
+<section class="hero is-light" style="background: linear-gradient(135deg, #00b5ee 0%, #005a8d 100%); padding: 3rem 0;">
   <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
+    <div class="container has-text-centered">
+      <h1 class="title has-text-white" style="font-weight: 700; letter-spacing: 0.05em;">
         年度別の記事一覧
       </h1>
+      <p class="subtitle has-text-white-ter is-6 mt-3">
+        これまでの活動を年度ごとにまとめています
+      </p>
     </div>
   </div>
 </section>
-<section class="section">
+
+<section class="section" style="background-color: #fafafa;">
   <div class="container">
-    <div class="columns">
-      <div class="column">
-        <div class="column is-vcentered">
-            {% for tag in site.tags reversed %}
-            <h1 id="tag_{{ tag[0] }}" class="title is-4"><strong>{{ tag[0] }}</strong></h1>
-            <ul>
-                <div class="columns is-multiline">
-                {% for post in tag[1] %}
-                    <div class="column is-4-desktop is-6-tablet">
-                        <a class="card is-block" href="{{ post.url }}">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                            {% if post.image %}
-                            <img src="{{ post.image }}" alt="" class="p-is-cover">
-                            {% else %}
-                            <img src="/assets/img/logo.jpg" alt="" class="p-is-cover">
-                            {% endif %}
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="subtitle">
-                            {{ post.title }}
-                            </p>
-                            <div class="content has-text-right">
-                            <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y/%m/%d" }}</time>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                {% endfor %}
-              </div>
-              <br>
-            </ul>
-          {% endfor %}
+    <div class="columns is-desktop">
+      
+      <div class="column is-9-desktop">
+        
+        {% for tag in site.tags reversed %}
+        <div class="archive-section mb-6">
+          <h2 id="tag_{{ tag[0] }}" class="title is-4" style="border-left: 6px solid #00b5ee; padding-left: 1rem; margin-bottom: 1.5rem;">
+            {{ tag[0] }}
+          </h2>
+          
+          <div class="columns is-multiline">
+            {% for post in tag[1] %}
+            <div class="column is-4-desktop is-6-tablet">
+              <a href="{{ post.url }}" class="card-blog-b" style="height: 100%; min-height: 250px;">
+                <div class="overlay-image">
+                  {% if post.image %}
+                  <img src="{{ post.image }}" alt="">
+                  {% else %}
+                  <img src="/assets/img/logo.jpg" alt="">
+                  {% endif %}
+                </div>
+                <div class="overlay-text">
+                  <p style="font-size: 0.75rem; opacity: 0.9; margin-bottom: 0.3rem;">
+                    <i class="fa-regular fa-clock mr-1"></i> {{ post.date | date: "%Y/%m/%d" }}
+                  </p>
+                  <p class="card-title" style="font-size: 1rem; font-weight: bold; line-height: 1.4;">
+                    {{ post.title }}
+                  </p>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+          
+          <hr style="background-color: #eee; margin-top: 3rem;">
         </div>
+        {% endfor %}
       </div>
       {% include right_column.html %}
+
     </div>
   </div>
 </section>

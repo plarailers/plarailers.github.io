@@ -3,50 +3,67 @@ layout: default
 title: 開発記録
 ---
 
-<section class="hero">
+<section class="hero is-dark" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/img/icon.jpg'); background-size: cover; background-position: center; padding: 4rem 0;">
   <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
+    <div class="container has-text-centered">
+      <h1 class="title is-2" style="font-weight: 700; letter-spacing: 0.1em; color: #fff;">
         開発記録
       </h1>
-      <h1>
-        <strong>ソフトウェアからハードウェアまで、私たちが開発した内容を記録していくページです</strong>
+      <h1 class="title is-4" style="font-weight: 400; letter-spacing: 0.1em; color: #fff;">
+        DEVELOPMENT LOG
       </h1>
+      <p class="subtitle is-5 mt-3" style="max-width: 600px; margin: 0 auto; line-height: 1.6;">
+        <strong>ソフトウェアからハードウェアまで、<br>プラレール改造の軌跡</strong>
+      </p>
     </div>
   </div>
 </section>
-<section class="section">
+
+<section class="section" style="background-color: #fafafa;">
   <div class="container">
-    <div class="columns">
-      <div class="column">
-        <div class="column is-vcentered">
-            {% for tag_name in site.dev_tags %}
-            <h1 id="tag_{{ tag_name }}" class="title is-4">{{ tag_name }}</h1>
-              <div class="columns is-multiline">
-                {% for post in site.developments %}
-                  {% if post.tags contains tag_name %}
-                  <div class="column is-4-desktop is-6-tablet">
-                    <a class="card-blog-b" href="{{ post.url }}">
-                      <div class="overlay-image">
-                        {% if post.image %}
-                          <img src="{{ post.image }}" alt="{{ post.title }}">
-                        {% else %}
-                          <img src="/assets/img/logo.jpg" alt="No Image">
-                        {% endif %}
-                        <div class="overlay-text">
-                          <h3 class="card-title">{{ post.title }}</h3>
-                        </div>
-                      </div>
-                    </a>
+    <div class="columns is-desktop">
+      
+      <div class="column is-9-desktop">
+        
+        {% for tag_name in site.dev_tags %}
+        <div class="dev-category mb-6">
+          <div class="is-flex is-vcentered mb-4">
+            <span style="background-color: #00b5ee; width: 12px; height: 24px; display: inline-block; margin-right: 10px; border-radius: 2px;"></span>
+            <h2 id="tag_{{ tag_name }}" class="title is-4" style="margin-bottom: 0;">
+              {{ tag_name }}
+            </h2>
+          </div>
+
+          <div class="columns is-multiline">
+            {% for post in site.developments %}
+              {% if post.tags contains tag_name %}
+              <div class="column is-4-desktop is-6-tablet">
+                <a href="{{ post.url }}" class="card-blog-b" style="height: 100%; min-height: 220px;">
+                  <div class="overlay-image">
+                    {% if post.image %}
+                    <img src="{{ post.image }}" alt="{{ post.title }}">
+                    {% else %}
+                    <img src="/assets/img/logo.jpg" alt="No Image">
+                    {% endif %}
                   </div>
-                  {% endif %}
-                {% endfor %}
+                  <div class="overlay-text">
+                    <p class="card-title" style="font-size: 1rem; font-weight: 700; line-height: 1.4;">
+                      {{ post.title }}
+                    </p>
+                  </div>
+                </a>
               </div>
-              <br><br><br>
+              {% endif %}
             {% endfor %}
+          </div>
+          
+          {% unless forloop.last %}
+            <hr style="background-color: #e0e0e0; margin-top: 4rem; opacity: 0.5;">
+          {% endunless %}
         </div>
+        {% endfor %}
       </div>
-      {% include right_column.html %}
+        {% include right_column.html %}
     </div>
   </div>
 </section>
