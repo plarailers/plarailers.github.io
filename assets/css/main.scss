@@ -153,3 +153,22 @@ $color-plarailers: #00b5ee;
  font-size: 1.3rem;
 }
 /*----------------------------------------*/
+
+/* スマホ向けの調整（画面幅が768px以下の時） */
+@media screen and (max-width: 768px) {
+  
+  /* ヒーロータイトルのサイズ */
+  .p-hero-title {
+    font-size: 24px; /* 40pxから24pxに調整 */
+  }
+
+  /* 本文のサイズ */
+  .content {
+    font-size: 1rem; /* 1.125remから1remに調整 */
+  }
+
+  /* カードのタイトル */
+  .card-title {
+    font-size: 1.1rem; /* 1.3remから調整 */
+  }
+}
