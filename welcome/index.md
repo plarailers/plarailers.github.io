@@ -3,6 +3,8 @@ layout: page
 title: 加入を考えている方へ
 ---
 
+![](https://github.com/plarailers/plarailers.github.io/blob/master/welcome/welcome2026.jpg?raw=true)
+
 こんにちは！
 プラレーラーズは**プラレールの自動制御**と**ジオラマ作成**をしている東京大学のサークルです！
 
@@ -26,4 +28,3 @@ title: 加入を考えている方へ
 
 公式LINE: [ここから友達追加](https://lin.ee/RZt9P77)
 
-![](https://github.com/plarailers/plarailers.github.io/blob/master/welcome/welcome2026.jpg?raw=true)
