@@ -1,0 +1,69 @@
+---
+layout: page
+title: 2. 分岐器操作盤
+tags: "〜開発ブログ〜"
+image: https://lh3.googleusercontent.com/d/1sUbx_jNMX903Jvy6b0Ozt720EccVy7hz
+---
+
+<div style="text-align: right;">
+  2026/03/31
+</div>
+<br>
+<p><img src="https://lh3.googleusercontent.com/d/1sUbx_jNMX903Jvy6b0Ozt720EccVy7hz"></p>
+
+<br>
+
+<h2>旧バージョンの振り返り</h2>
+<p>
+  分岐器をスイッチで操作できる操作盤の開発は、以前にも行なっていました。<br>
+  2024年11月に行われた駒場祭にて展示し、来場者の方に楽しんでいただきました。<br>
+  今回は、この配線をコンパクトにし、プリント基板を設計し直すことに取り組みました。
+</p>
+<p><img src="https://lh3.googleusercontent.com/d/1_ilnh9s7IoxlGOtTcRasfhleC_D2fLEW"></p>
+
+<br>
+
+<h2>回路設計</h2>
+<p>
+  回路の仕組みは、以前のモデルとほとんど同様です。<br>
+  トグルスイッチの配線を<b>マイコン（ESP32）</b>のピンに繋げ、<strong>入力</strong>を検出します。<br>
+  ここの入力は、<b>ON(3.3V)</b>か<b>0FF(GND)</b>です。
+</p>
+<p>
+  <strong>出力</strong>はLEDへの配線と、分岐器サーボモータへのシリアル線です。<br>
+  LEDについては、<b>74HC595</b>を用いて、スイッチの入力に応じた点灯パターンを実現しています。<br>
+  <b>NPNトランジスタ</b>のベースに電流を流すことで、LEDに流れる電流を制御しています。
+</p>
+<p>
+  <strong>電源</strong>の入力は<b>12V</b>です。<br>
+  LEDには12Vの配線を繋げ、マイコンなどのVCCピンには、<b>三端子レギュレータ</b>で5Vに降圧した電流を流しています。
+</p>
+<p><img src="https://lh3.googleusercontent.com/d/1BS3Xj5xUctkooMN2WNZaVDRkcugfwYqJ"></p>
+
+<br>
+
+<h2>プリント基板</h2>
+<p>
+  今回は、すべての回路を<strong>１枚</strong>のプリント基板に収めました。<br>
+  <b>表側</b>にはLEDとトグルスイッチを設置し、<b>裏側</b>には他の電子部品を配置しています。<br>
+  LEDを挿すときの<b>スペーサー</b>となる白い部品は、3Dプリンタで造形しました。
+</p>
+<p><img src="https://lh3.googleusercontent.com/d/1RnebPkpzs5bXHeRqv1CMiyhNbhGM40M2"></p>
+<p><img src="https://lh3.googleusercontent.com/d/1L5ggDgZGS6__zG84O2jAyBa4PBT6GOhN"></p>
+
+<br>
+
+<h2>分岐器との接続</h2>
+<p>
+  操作盤のLEDに合わせて分岐器を配置し、操作盤からのデータ線を接続しました。
+</p>
+<p><img src="https://lh3.googleusercontent.com/d/1y9PL3d6fdMM5r7wPYxzmDvKPcBaqy-MS"></p>
+
+<br>
+
+<h2>完成</h2>
+<p>
+  カバーは、黒いアクリル板を<b>レーザーカッター</b>で加工して作成しました。
+</p>
+<p><img src="https://lh3.googleusercontent.com/d/1zH_nU0fNosexQOVqg838tYApG5H6Ccqa"></p>
+<p><img src="https://lh3.googleusercontent.com/d/1hS39EBeuBhRAlZsMiao3no7LAkgKpd0p"></p>
