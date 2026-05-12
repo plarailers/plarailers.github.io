@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<section class="hero is-dark is-bold" style="background: linear-gradient(135deg, #2b32b2 0%, #1488cc 100%); padding: 40px 20px;">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1" style="font-weight: 900; letter-spacing: 0px; text-shadow: 4px 4px 8px rgba(0,0,0,0.3);">
+        {{ page.headtitle }}
+      </h1>
+      <p class="subtitle is-4" style="opacity: 0.9;">UTokyo Plarailers</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: #f5f7fa;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content box" style="border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+          {{ content }}
+        </div>
+      </div>
+      {% include right_column.html %}
+    </div>
+  </div>
+</section>

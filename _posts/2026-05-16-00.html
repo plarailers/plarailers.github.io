@@ -1,0 +1,231 @@
+---
+layout: event-page
+title: 第99回五月祭特設ページ
+headtitle: 第99回五月祭
+tags: "2026"
+image: https://lh3.googleusercontent.com/d/18xggYlVI_bYFZOya3TQFSY9SYvV-eZHY
+---
+<style>
+  .content h2 {
+    border-left: 6px solid #2b32b2;
+    padding-left: 15px;
+    margin-top: 2em;
+    font-weight: 700;
+  }
+  .content h3 {
+    color: #1488cc;
+    border-bottom: 3px solid #eee;
+    padding-bottom: 5px;
+  }
+  .content strong {
+    background-image: linear-gradient(transparent 70%, #ff8a8a 0);
+  }
+  .content img {
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
+  .content img:hover {
+    transform: scale(1.02);
+  }
+  /* 目次 */
+  .toc-box {
+    background: #fdfdfd;
+    border: 5px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  /* 投票ボタン */
+  .vote-btn {
+    display: block;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white !important;
+    text-align: center;
+    padding: 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+    transition: 0.3s;
+  }
+  .vote-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 65, 108, 0.6);
+  }
+</style>
+
+<div class="has-text-centered">
+    <img src="https://lh3.googleusercontent.com/d/1-Uo8uWraTug4gXmyJCF_5Np26NqTqJ77" alt="タイトル画像" style="width: 100%; max-height: 400px; object-fit: cover;" />
+</div>
+
+<div class="intro-section" style="margin-top: 30px;">
+<h2>プラレーラーズとは</h2>
+    <div class="columns is-vcentered">
+        <div class="column">
+    <img src="https://lh3.googleusercontent.com/d/1SRceqlZnTW3QWOGdMZwPH2qzzVwDfYSg"/>
+        </div>
+        <div class="column">
+            <p>
+                東京大学本郷キャンパスを拠点に活動するエンジニアサークルです！<br>
+                <strong>プラレールを改造して無線制御</strong>を行い、自動運転システムを開発しています。
+                ものづくり好きや鉄道好きが集まって、学園祭などでの展示を目標に、日々開発を行っています。
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="intro-section" style="margin-top: 30px;">
+<h2>展示概要</h2>
+    <div class="columns is-vcentered">
+        <div class="column">
+            <img src="https://lh3.googleusercontent.com/d/1-s_80Cjdugpe3ZOQpdq6W3c26BISXvY2" alt="部屋の写真（15日掲載予定）"/>
+        </div>
+        <div class="column">
+            <ul><b>・自動運転展示〜丸ノ内線〜</b></ul>
+            <ul><b>・分岐器操作盤体験</b></ul>
+        </div>
+    </div>
+</div>
+<br>
+<div class="toc-box">
+    <h3 style="border:none; font-size: 1.1rem; margin-top:0;">目次</h3>
+<ol>
+  <li><a href="#1st">安全運転の仕組み</a></li>
+  <li><a href="#2nd">展示の見どころ</a></li>
+  <li><a href="#3rd">分岐器の操作盤</a></li>
+  <li><a href="#4th">さいごに</a></li>
+</ol>
+</div>
+<br>
+<h2 id="1st">自動運転の仕組み</h2>
+<p>
+    我々のシステムは、実際の列車運行にも採用されている<strong>「閉塞システム」</strong>を基にしたプログラミング制御を行っています。
+</p>
+<div class="notification is-light" style="border-radius: 10px; margin-top: 15px;">
+    <h3>閉塞システムとは</h3>
+    <p>
+        線路を「閉塞」と呼ばれる区間に区切って管理します。<br>
+        <b>「１つの閉塞には１つの列車しか進入できない」</b>というルールを決めることで、絶対に衝突しない仕組みが出来上がります。
+    </p>
+    <p>
+        <img src="https://lh3.googleusercontent.com/d/19ivXc_uS70dOmILq3iCV9VBevqIb6md_"/>
+    </p>
+    <p>
+        <img src="https://lh3.googleusercontent.com/d/1zSaiUekAEqFOYwW0FW3E1vXxDPodSw7T"/>
+    </p>
+</div>
+<br>
+<p>
+    <b>ここからは「閉塞システム」を、展示にどのように応用しているのかをご紹介します。</b>
+</p>
+<br>
+
+<h2 id="2nd">展示の見どころ</h2>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1xLHtG3KZTtsHm03TovWKjA9-oUpvvSVN"/>
+</p>
+<p>
+    <strong>Bluetooth</strong>を使って無線通信し、PCと各デバイスを繋いだ集中管理システムです。<br>
+    <br>
+    <b>5つの注目ポイント</b>をご紹介します。
+</p>
+<br>
+
+<h3>1. 在線検知</h3>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1nc0UnbQ6vNMi1wmDZjvo4mrCBeFnV5hy"/>
+</p>
+<p>
+    プラレールでは、レールの下に設置した<strong>ICカード</strong>で位置を判別しています。
+    列車がカードをスキャンし、その位置情報をPCに送信することで、列車の走行位置を把握しています。
+</p>
+<br>
+
+<h3>2. 分岐器</h3>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1zOt9DlQ-9EUHX6FFAfhQP7QJCEu_6DSp"/>
+</p>
+<p>
+    分岐器のレールは<b>3Dプリンター</b>で自作しています。<br>
+    レールの下側には、角度を制御できる<b>サーボモーター</b>を取り付けており、分岐のウデ部分に繋がっています。<br>
+    次に分岐器に進入する列車を判別し、その列車の走行経路に合わせてモーターを制御します。<br>
+    <br>
+    今回の種別は３種類です！
+</p>
+<ul><b>荻窪↔︎池袋</b></ul>
+<ul><b>方南町↔︎池袋</b></ul>
+<ul><b>方南町↔︎中野坂上</b></ul>
+<br>
+
+<h3>3. 信号機</h3>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1g_5-K3xQnSBEbSztLegUhtJHBaadJzvi"/>
+</p>
+<p>
+    我々のシステムには、<strong>段階的な速度制御</strong>も実装しています。
+    <b>前の列車との距離</b>に応じて信号現示を変え、適切な速度で列車が走行するように指示を行っています。
+</p>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1paj1-3vbvfOvucNc4QUL7-RKgbOGABx6"/>
+</p>
+<p>
+    この信号指示は、<b>各閉塞（ICカード）ごと</b>に決めており、それを可視化したものが<strong>信号機</strong>です。
+    3Dプリンタで作成した筐体に、LEDを使った回路を組み込んでいます。
+</p>
+<br>
+
+<h3>4. 駅停車・折り返し</h3>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1v8f0hq1-OK42mvVUKo8sJUcwg1ykSVeg"/>
+</p>
+<p>
+    事前に設定した閉塞、つまり特定のICカードに到達した場合に停車するようなシステムを組み込んでいます。
+    これが<strong>駅停車</strong>です。減速しながら停止し、加速しながら発進する制御も行っています。<br>
+    また、車両を改造して双方向に進むようにしているので、<strong>折り返し運転</strong>も実現しています。
+</p>
+<br>
+
+<h3>5. 車体モデリング</h3>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1-A-NVHXVTT1XY8ZLTGpubPYx9Aew3izK"/>
+</p>
+<p>
+    車体カバーは、3Dプリンターで印刷して作成しました。
+    今回のテーマ<strong>「東京メトロ丸ノ内線」</strong>に合わせたモデルになっています。
+</p>
+<br>
+
+<h2 id="3rd">分岐器操作盤</h2>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1Fkobutg2gxqEbWD7vQwRjWIjo5NrPtjz"/>
+</p>
+<p>
+    体験型展示として、<b>分岐器操作盤</b>を展示しています。<br>
+    スイッチを動かすことで、実際の分岐器の進路を変更することができます。<br>
+    <b>往復運転する列車を、好きな位置に入線させてみましょう！</b>
+</p>
+<p>
+    <img src="https://lh3.googleusercontent.com/d/1YJHz5DPYrPXCkUIxwUyHA4aZpUBVEzYS"/>
+</p>
+<br>
+
+<hr>
+
+<h2 id="4th">さいごに</h2>
+<div class="box" style="background: #f9f9f9; text-align: center; border: 2px dashed #ccc;">
+    <p>
+        <b>最後までご覧いただき</b><br>
+        <b>ありがとうございます！</b><br>
+        <br>
+        ぜひ<strong>「五月祭総選挙」</strong>での投票をお願いします！
+    </p>
+    <a href="https://visitor.gogatsusai.jp/project/136" class="vote-btn">
+        五月祭総選挙で<br>投票する
+    </a>
+    <p style="font-size: 0.8rem; margin-top: 15px; color: #666;">
+        ※投票時のメッセージ欄から<br>
+        ぜひ感想や要望をお寄せください！
+    </p>
+</div>
